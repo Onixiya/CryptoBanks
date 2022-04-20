@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using HarmonyLib;
 using Assets.Scripts.Simulation.Towers.Behaviors;
+using Assets.Scripts.Simulation;
 [assembly:MelonInfo(typeof(CryptoBanks.ModMain),"CryptoBanks","1.0.0","Silentstorm")]
 [assembly:MelonGame("Ninja Kiwi","BloonsTD6")]
 namespace CryptoBanks{
@@ -34,10 +35,13 @@ namespace CryptoBanks{
         public class BankPayInterest_patch{
             [HarmonyPostfix]
             public static void Postfix(ref Bank __instance){
+                float value=(float)BTCValues[new System.Random().Next(2,BTCValues.Count+1)];
                 if(new System.Random().Next(0,2)==1){
-                    __instance.cash*=(float)BTCValues[new System.Random().Next(2,BTCValues.Count+1)];
+                    __instance.cash*=value;
+                    __instance.Sim.SetCash(__instance.Sim.GetCash(-1)*value,-1);
                 }else{
-                    __instance.cash/=(float)BTCValues[new System.Random().Next(2,BTCValues.Count+1)];
+                    __instance.cash/=value;
+                    __instance.Sim.SetCash(__instance.Sim.GetCash(-1)/value,-1);
                 }
             }
         }
