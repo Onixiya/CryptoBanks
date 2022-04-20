@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using HarmonyLib;
 using Assets.Scripts.Simulation.Towers.Behaviors;
 using Assets.Scripts.Simulation;
-[assembly:MelonInfo(typeof(CryptoBanks.ModMain),"CryptoBanks","1.0.0","Silentstorm")]
+[assembly:MelonInfo(typeof(CryptoBanks.ModMain),"CryptoBanks","1.1.0","Silentstorm")]
 [assembly:MelonGame("Ninja Kiwi","BloonsTD6")]
 namespace CryptoBanks{
     public class ModMain:MelonMod{
