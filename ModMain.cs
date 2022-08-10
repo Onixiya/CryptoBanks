@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using HarmonyLib;
 using Assets.Scripts.Simulation.Towers.Behaviors;
-using Assets.Scripts.Simulation;
-[assembly:MelonInfo(typeof(CryptoBanks.ModMain),"CryptoBanks","1.1.0","Silentstorm")]
+[assembly:MelonInfo(typeof(CryptoBanks.ModMain),"CryptoBanks","1.1.1","Silentstorm")]
 [assembly:MelonGame("Ninja Kiwi","BloonsTD6")]
 namespace CryptoBanks{
     public class ModMain:MelonMod{
@@ -23,7 +22,7 @@ namespace CryptoBanks{
         }
         public static string[]CSV=Data.BTCValues.Split('\n');
         public static List<decimal>BTCValues=new List<decimal>();
-        public override void OnApplicationStart(){
+        public override void OnInitializeMelon(){
             foreach(string str in CSV){
                 string[]str1=str.Split(',');
                 if(decimal.TryParse(str1[2],out decimal value)){
