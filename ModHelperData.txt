@@ -1,6 +1,6 @@
 Name = Crypto Banks
 Description = "Randomizes the amount of money held in banks based from real crypto prices"
-Version = "1.1.0"
+Version = "1.1.1"
 RepoName = "CryptoBanks"
 RepoOwner = "Onixiya"
 Author = "Silentstorm"
